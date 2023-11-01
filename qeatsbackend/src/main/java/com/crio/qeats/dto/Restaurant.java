@@ -8,10 +8,12 @@
 package com.crio.qeats.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,8 +34,19 @@ import lombok.NoArgsConstructor;
 //    "South Indian"
 //  ]
 // }
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Restaurant {
+    String restaurantId;
+    String name;
+    String city;
+    String imageUrl;
+    double latitude;
+    double longitude;
+    String opensAt;
+    String closesAt;
+    List<String> attributes;
 
 }
 
