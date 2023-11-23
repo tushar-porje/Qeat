@@ -31,11 +31,7 @@ public class GetRestaurantsRequest {
     @Max(90)
     private double latitude;
 
-    public GetRestaurantsRequest(@NotNull @Min(-90) @Max(90) double latitude,
-            @NotNull @Min(-180) @Max(180) double longitude) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
+    
 
     @NotNull
     @Min(value=-180)
@@ -43,5 +39,11 @@ public class GetRestaurantsRequest {
     private double longitude;
 
     private String searchFor;
+
+    public GetRestaurantsRequest(@NotNull @Min(-90) @Max(90) double latitude,
+            @NotNull @Min(-180) @Max(180) double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }
 
