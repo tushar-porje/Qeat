@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
 
 
-public interface RestaurantRepositoryService {
+public interface RestaurantRepositoryService{
 
   /**
    * Get the list of open restaurants within the specified serving radius.
