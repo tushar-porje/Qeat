@@ -41,8 +41,8 @@ import org.springframework.stereotype.Service;
 public class RestaurantRepositoryServiceImpl implements RestaurantRepositoryService {
 
 
-
-
+  @Autowired
+  private RestaurantRepository restaurantRepository;
   @Autowired
   private MongoTemplate mongoTemplate;
 
@@ -63,7 +63,7 @@ public class RestaurantRepositoryServiceImpl implements RestaurantRepositoryServ
   // Check RestaurantRepositoryService.java file for the interface contract.
   public List<Restaurant> findAllRestaurantsCloseBy(Double latitude,
       Double longitude, LocalTime currentTime, Double servingRadiusInKms) {
-    List<RestaurantEntity> restaurantEntities = mongoTemplate.findAll(RestaurantEntity.class);
+    List<RestaurantEntity> restaurantEntities = restaurantRepository.findAll();
     List<Restaurant> restaurants=new ArrayList<>();
     for(RestaurantEntity restaurantEntity:restaurantEntities){
       if(isRestaurantCloseByAndOpen(restaurantEntity, currentTime, latitude, longitude, servingRadiusInKms)){

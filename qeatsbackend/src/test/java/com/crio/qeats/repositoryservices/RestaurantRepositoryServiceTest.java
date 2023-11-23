@@ -89,7 +89,7 @@ public class RestaurantRepositoryServiceTest {
   void restaurantsCloseByAndOpenNow() {
     assertNotNull(restaurantRepositoryService);
 
-    when(restaurantRepository.findAll()).thenReturn(allRestaurants);
+     when(restaurantRepository.findAll()).thenReturn(allRestaurants);
 
     List<Restaurant> allRestaurantsCloseBy = restaurantRepositoryService
         .findAllRestaurantsCloseBy(20.0, 30.0, LocalTime.of(18, 1), 3.0);
